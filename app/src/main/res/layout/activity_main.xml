@@ -28,21 +28,25 @@
 
 
     <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:layout_width="match_parent"
         android:layout_weight="1"
         android:columnCount="5"
         android:rowCount="6"
-        android:layout_gravity="center_horizontal"
+        android:layout_gravity="fill_horizontal"
         android:useDefaultMargins="true">
         <Button
-            android:layout_width="wrap_content"
+            android:layout_gravity="fill_horizontal"
+            android:text="@string/clear"
+            android:layout_width="35dp"
             android:layout_height="wrap_content"
             android:layout_column="0"
             android:layout_row="0"
             app:layout_rowWeight="1"
-            app:layout_columnWeight="1"/>
+            app:layout_columnWeight="1" />
         <Button
+            android:layout_gravity="fill_horizontal"
+            android:text="@string/back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="1"
@@ -51,6 +55,8 @@
             app:layout_columnWeight="1"
             />
         <Button
+            android:layout_gravity="fill_horizontal"
+            android:text="@string/percent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="2"
@@ -58,6 +64,8 @@
             app:layout_rowWeight="1"
             app:layout_columnWeight="1"/>
         <Button
+            android:layout_gravity="fill_horizontal"
+            android:text="@string/parenthesis"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="3"
@@ -65,6 +73,8 @@
             app:layout_rowWeight="1"
             app:layout_columnWeight="1"/>
         <Button
+            android:layout_gravity="fill_horizontal"
+            android:text="@string/pai"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="4"
@@ -72,6 +82,8 @@
             app:layout_rowWeight="1"
             app:layout_columnWeight="1"/>
         <Button
+            android:layout_gravity="fill_horizontal"
+            android:text="sin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="0"
@@ -79,13 +91,17 @@
             app:layout_rowWeight="1"
             app:layout_columnWeight="1"/>
         <Button
-            android:layout_width="wrpa_content"
+            android:layout_gravity="fill_horizontal"
+            android:text="@string/radical"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="1"
             android:layout_row="1"
             app:layout_rowWeight="1"
             app:layout_columnWeight="1"/>
         <Button
+            android:layout_gravity="fill_horizontal"
+            android:text="@string/square"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="2"
@@ -93,6 +109,8 @@
             app:layout_rowWeight="1"
             app:layout_columnWeight="1"/>
         <Button
+            android:layout_gravity="fill_horizontal"
+            android:text="@string/power"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="3"
@@ -100,6 +118,8 @@
             app:layout_rowWeight="1"
             app:layout_columnWeight="1"/>
         <Button
+            android:layout_gravity="fill_horizontal"
+            android:text="@string/div"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="4"
@@ -107,6 +127,8 @@
             app:layout_rowWeight="1"
             app:layout_columnWeight="1"/>
         <Button
+            android:layout_gravity="fill_horizontal"
+            android:text="@string/cos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="0"
@@ -114,6 +136,8 @@
             app:layout_rowWeight="1"
             app:layout_columnWeight="1"/>
         <Button
+            android:layout_gravity="fill_horizontal"
+            android:text="@string/seven"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="1"
@@ -121,6 +145,8 @@
             app:layout_rowWeight="1"
             app:layout_columnWeight="1"/>
         <Button
+            android:layout_gravity="fill_horizontal"
+            android:text="@string/eight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="2"
@@ -128,6 +154,8 @@
             app:layout_rowWeight="1"
             app:layout_columnWeight="1"/>
         <Button
+            android:layout_gravity="fill_horizontal"
+            android:text="@string/nine"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="3"
@@ -135,6 +163,8 @@
             app:layout_rowWeight="1"
             app:layout_columnWeight="1"/>
         <Button
+            android:layout_gravity="fill_horizontal"
+            android:text="@string/mul"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="4"
@@ -143,6 +173,8 @@
             app:layout_columnWeight="1"/>
 
         <Button
+            android:layout_gravity="fill_horizontal"
+            android:text="@string/tan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="0"
@@ -151,6 +183,8 @@
             app:layout_columnWeight="1"/>
 
         <Button
+            android:layout_gravity="fill_horizontal"
+            android:text="@string/four"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="1"
@@ -158,6 +192,8 @@
             app:layout_rowWeight="1"
             app:layout_columnWeight="1"/>
         <Button
+            android:layout_gravity="fill_horizontal"
+            android:text="@string/fifth"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="2"
@@ -165,6 +201,8 @@
             app:layout_rowWeight="1"
             app:layout_columnWeight="1"/>
         <Button
+            android:layout_gravity="fill_horizontal"
+            android:text="@string/six"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="3"
@@ -172,6 +210,8 @@
             app:layout_rowWeight="1"
             app:layout_columnWeight="1"/>
         <Button
+            android:layout_gravity="fill_horizontal"
+            android:text="@string/sub"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="4"
@@ -179,6 +219,8 @@
             app:layout_rowWeight="1"
             app:layout_columnWeight="1"/>
         <Button
+            android:layout_gravity="fill_horizontal"
+            android:text="@string/ln"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="0"
@@ -186,6 +228,8 @@
             app:layout_rowWeight="1"
             app:layout_columnWeight="1"/>
         <Button
+            android:layout_gravity="fill_horizontal"
+            android:text="@string/one"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="1"
@@ -193,6 +237,8 @@
             app:layout_rowWeight="1"
             app:layout_columnWeight="1"/>
         <Button
+            android:layout_gravity="fill_horizontal"
+            android:text="@string/two"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="2"
@@ -200,6 +246,8 @@
             app:layout_rowWeight="1"
             app:layout_columnWeight="1"/>
         <Button
+            android:layout_gravity="fill_horizontal"
+            android:text="@string/three"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="3"
@@ -207,6 +255,8 @@
             app:layout_rowWeight="1"
             app:layout_columnWeight="1"/>
         <Button
+            android:layout_gravity="fill_horizontal"
+            android:text="@string/add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="4"
@@ -214,6 +264,8 @@
             app:layout_rowWeight="1"
             app:layout_columnWeight="1"/>
         <Button
+            android:layout_gravity="fill_horizontal"
+            android:text="@string/lg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="0"
@@ -221,6 +273,8 @@
             app:layout_rowWeight="1"
             app:layout_columnWeight="1"/>
         <Button
+            android:layout_gravity="fill_horizontal"
+            android:text="@string/e"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="1"
@@ -228,6 +282,8 @@
             app:layout_rowWeight="1"
             app:layout_columnWeight="1"/>
         <Button
+            android:layout_gravity="fill_horizontal"
+            android:text="@string/zero"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="2"
@@ -235,6 +291,8 @@
             app:layout_rowWeight="1"
             app:layout_columnWeight="1"/>
         <Button
+            android:layout_gravity="fill_horizontal"
+            android:text="@string/point"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="3"
@@ -242,6 +300,8 @@
             app:layout_rowWeight="1"
             app:layout_columnWeight="1"/>
         <Button
+            android:layout_gravity="fill_horizontal"
+            android:text="@string/result"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="4"
