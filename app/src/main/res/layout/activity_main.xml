@@ -7,408 +7,455 @@
     android:background="@color/background_all">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="最上面的缓存框"
         android:textColor="#b9b8b8"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:gravity="end|right"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="end|right"
         android:text="结果框"
-        android:textSize="40sp"
         android:textColor="#fcfbfb"
+        android:layout_weight="1"
         />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="40sp"
+        android:gravity="end|right"
         android:text="输入框"
         android:textColor="#fffefe"
+        android:maxLines="1"
         />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:background="@color/button">
 
-        >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            >
+            android:paddingBottom="13dp">
+
             <Button
-                style="?android:attr/buttonStyle"
-                android:background="@color/button"
-                android:textSize="33sp"
-                android:textColor="#ffffff"
-                android:text="@string/clear"
                 android:id="@+id/clear"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                 />
-            <Button
                 style="?android:attr/buttonStyle"
-                android:background="@color/button"
-                android:textSize="33sp"
-                android:textColor="#ffffff"
-                android:text="@string/back"
-                android:id="@+id/back"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@color/button"
+                android:text="@string/clear"
+                android:textColor="#ffffff"
+                android:textSize="33sp" />
+
+            <Button
+                android:id="@+id/back"
+                style="?android:attr/buttonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/button"
+                android:text="@string/back"
+                android:textColor="#ffffff"
+                android:textSize="33sp"
                 />
 
             <Button
-                style="?android:attr/buttonStyle"
-                android:background="@color/button"
                 android:id="@+id/percent"
+                style="?android:attr/buttonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@color/button"
                 android:text="@string/percent"
                 android:textColor="#ffffff"
                 android:textSize="33sp" />
 
             <Button
-                style="?android:attr/buttonStyle"
-                android:background="@color/button"
                 android:id="@+id/parenthesis"
+                style="?android:attr/buttonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@color/button"
                 android:text="@string/parenthesis"
                 android:textColor="#ffffff"
                 android:textSize="33sp" />
 
             <Button
-                style="?android:attr/buttonStyle"
-                android:background="@color/button"
                 android:id="@+id/pai"
-                android:textSize="33sp"
-                android:textColor="#ffffff"
+                style="?android:attr/buttonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/button"
                 android:text="@string/pai"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="33sp" />
         </LinearLayout>
+
         <LinearLayout
-            android:background="@color/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            >
+            android:paddingBottom="@dimen/paddingforbutton">
+
             <Button
-                style="?android:attr/buttonStyle"
-                android:background="@color/button"
                 android:id="@+id/sin"
-                android:textSize="25sp"
-                android:textColor="#FFFF"
-                android:textAllCaps="false"
+                style="?android:attr/buttonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/button"
                 android:text="@string/sin"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:textAllCaps="false"
+                android:textColor="#FFFF"
+                android:textSize="25sp" />
+
             <Button
-                style="?android:attr/buttonStyle"
-                android:background="@color/button"
                 android:id="@+id/radical"
-                android:textSize="33sp"
-                android:textColor="#FFFF"
+                style="?android:attr/buttonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/button"
                 android:text="@string/radical"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:textColor="#FFFF"
+                android:textSize="33sp" />
+
             <Button
-                style="?android:attr/buttonStyle"
-                android:background="@color/button"
                 android:id="@+id/square"
-                android:textSize="33sp"
-                android:textColor="#FFFF"
-                android:textAllCaps="false"
+                style="?android:attr/buttonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/button"
                 android:text="@string/square"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:textAllCaps="false"
+                android:textColor="#FFFF"
+                android:textSize="33sp" />
+
             <Button
-                style="?android:attr/buttonStyle"
-                android:background="@color/button"
                 android:id="@+id/power"
-                android:textSize="33sp"
-                android:textColor="#FFFF"
-                android:textAllCaps="false"
+                style="?android:attr/buttonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/button"
                 android:text="@string/power"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:textAllCaps="false"
+                android:textColor="#FFFF"
+                android:textSize="33sp" />
+
             <Button
-                style="?android:attr/buttonStyle"
-                android:background="@color/button"
                 android:id="@+id/div"
-                android:textSize="33sp"
-                android:textColor="#FFFF"
-                android:textAllCaps="false"
+                style="?android:attr/buttonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/button"
                 android:text="@string/div"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:textAllCaps="false"
+                android:textColor="#FFFF"
+                android:textSize="33sp" />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            >
+            android:paddingBottom="@dimen/paddingforbutton">
 
             <Button
-                style="?android:attr/buttonStyle"
-                android:background="@color/button"
                 android:id="@+id/cos"
-                android:textSize="25sp"
-                android:textColor="#FFFF"
-                android:textAllCaps="false"
-                android:text="@string/cos"
-                android:layout_height="match_parent"
+                style="?android:attr/buttonStyle"
                 android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                 />
-            <Button
-                style="?android:attr/buttonStyle"
                 android:background="@color/button"
+                android:text="@string/cos"
+                android:textAllCaps="false"
+                android:textColor="#FFFF"
+                android:textSize="25sp" />
+
+            <Button
                 android:id="@+id/seven"
-                android:textSize="33sp"
-                android:textColor="#FFFF"
-                android:textAllCaps="false"
+                style="?android:attr/buttonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/button"
                 android:text="@string/seven"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:textAllCaps="false"
+                android:textColor="#FFFF"
+                android:textSize="33sp" />
+
             <Button
-                style="?android:attr/buttonStyle"
-                android:background="@color/button"
                 android:id="@+id/eight"
-                android:textSize="33sp"
-                android:textColor="#FFFF"
-                android:textAllCaps="false"
+                style="?android:attr/buttonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/button"
                 android:text="@string/eight"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:textAllCaps="false"
+                android:textColor="#FFFF"
+                android:textSize="33sp" />
+
             <Button
-                style="?android:attr/buttonStyle"
-                android:background="@color/button"
                 android:id="@+id/nine"
-                android:textSize="33sp"
-                android:textColor="#FFFF"
-                android:textAllCaps="false"
-                android:text="@string/nine"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
-            <Button
                 style="?android:attr/buttonStyle"
-                android:background="@color/button"
-                android:id="@+id/mul"
-                android:textSize="33sp"
-                android:textColor="#FFFF"
-                android:textAllCaps="false"
-                android:text="@string/mul"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:background="@color/button"
+                android:text="@string/nine"
+                android:textAllCaps="false"
+                android:textColor="#FFFF"
+                android:textSize="33sp" />
+
+            <Button
+                android:id="@+id/mul"
+                style="?android:attr/buttonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/button"
+                android:text="@string/mul"
+                android:textAllCaps="false"
+                android:textColor="#FFFF"
+                android:textSize="33sp" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            >
+            android:paddingBottom="@dimen/paddingforbutton">
+
             <Button
-                style="?android:attr/buttonStyle"
-                android:background="@color/button"
                 android:id="@+id/tan"
-                android:textSize="25sp"
-                android:textColor="#FFFF"
-                android:textAllCaps="false"
-                android:text="@string/tan"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
-
-            <Button
                 style="?android:attr/buttonStyle"
-                android:background="@color/button"
-                android:id="@+id/four"
-                android:textSize="33sp"
-                android:textColor="#FFFF"
-                android:textAllCaps="false"
-                android:text="@string/four"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
-
-            <Button
-                style="?android:attr/buttonStyle"
-                android:background="@color/button"
-                android:id="@+id/fifth"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@color/button"
+                android:text="@string/tan"
+                android:textAllCaps="false"
+                android:textColor="#FFFF"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/four"
+                style="?android:attr/buttonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/button"
+                android:text="@string/four"
+                android:textAllCaps="false"
+                android:textColor="#FFFF"
+                android:textSize="33sp" />
+
+            <Button
+                android:id="@+id/fifth"
+                style="?android:attr/buttonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/button"
                 android:text="@string/fifth"
                 android:textAllCaps="false"
                 android:textColor="#FFFF"
                 android:textSize="33sp" />
 
             <Button
-                style="?android:attr/buttonStyle"
-                android:background="@color/button"
                 android:id="@+id/six"
-                android:textSize="33sp"
-                android:textColor="#FFFF"
-                android:textAllCaps="false"
+                style="?android:attr/buttonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/button"
                 android:text="@string/six"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:textAllCaps="false"
+                android:textColor="#FFFF"
+                android:textSize="33sp" />
+
             <Button
-                style="?android:attr/buttonStyle"
-                android:background="@color/button"
                 android:id="@+id/sub"
-                android:textSize="33sp"
-                android:textColor="#FFFF"
-                android:textAllCaps="false"
+                style="?android:attr/buttonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/button"
                 android:text="@string/sub"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:textAllCaps="false"
+                android:textColor="#FFFF"
+                android:textSize="33sp" />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            >
+            android:paddingBottom="@dimen/paddingforbutton">
 
             <Button
-                style="?android:attr/buttonStyle"
-                android:background="@color/button"
                 android:id="@+id/ln"
-                android:textSize="25sp"
-                android:textColor="#FFFF"
-                android:textAllCaps="false"
+                style="?android:attr/buttonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/button"
                 android:text="@string/ln"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:textAllCaps="false"
+                android:textColor="#FFFF"
+                android:textSize="25sp" />
+
             <Button
-                style="?android:attr/buttonStyle"
-                android:background="@color/button"
                 android:id="@+id/one"
-                android:textSize="33sp"
-                android:textColor="#FFFF"
-                android:textAllCaps="false"
+                style="?android:attr/buttonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/button"
                 android:text="@string/one"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:textAllCaps="false"
+                android:textColor="#FFFF"
+                android:textSize="33sp" />
+
             <Button
-                style="?android:attr/buttonStyle"
-                android:background="@color/button"
                 android:id="@+id/two"
-                android:textSize="33sp"
-                android:textColor="#FFFF"
-                android:textAllCaps="false"
+                style="?android:attr/buttonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/button"
                 android:text="@string/two"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:textAllCaps="false"
+                android:textColor="#FFFF"
+                android:textSize="33sp" />
+
             <Button
-                style="?android:attr/buttonStyle"
-                android:background="@color/button"
                 android:id="@+id/three"
-                android:textSize="33sp"
-                android:textColor="#FFFF"
-                android:textAllCaps="false"
-                android:text="@string/three"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
-            <Button
                 style="?android:attr/buttonStyle"
-                android:background="@color/button"
-                android:id="@+id/add"
-                android:textSize="33sp"
-                android:textColor="#FFFF"
-                android:textAllCaps="false"
-                android:text="@string/add"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:background="@color/button"
+                android:text="@string/three"
+                android:textAllCaps="false"
+                android:textColor="#FFFF"
+                android:textSize="33sp" />
+
+            <Button
+                android:id="@+id/add"
+                style="?android:attr/buttonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/button"
+                android:text="@string/add"
+                android:textAllCaps="false"
+                android:textColor="#FFFF"
+                android:textSize="33sp" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            >
+            android:paddingBottom="@dimen/paddingforbutton">
+
             <Button
-                style="?android:attr/buttonStyle"
-                android:background="@color/button"
                 android:id="@+id/lg"
-                android:textSize="25sp"
-                android:textColor="#FFFF"
-                android:textAllCaps="false"
+                style="?android:attr/buttonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/button"
                 android:text="@string/lg"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:textAllCaps="false"
+                android:textColor="#FFFF"
+                android:textSize="25sp" />
+
             <Button
-                style="?android:attr/buttonStyle"
-                android:background="@color/button"
                 android:id="@+id/e"
-                android:textSize="25sp"
-                android:textColor="#FFFF"
-                android:textAllCaps="false"
+                style="?android:attr/buttonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/button"
                 android:text="@string/e"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:textAllCaps="false"
+                android:textColor="#FFFF"
+                android:textSize="25sp" />
+
             <Button
-                style="?android:attr/buttonStyle"
-                android:background="@color/button"
                 android:id="@+id/zero"
-                android:textSize="33sp"
-                android:textColor="#FFFF"
-                android:textAllCaps="false"
+                style="?android:attr/buttonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/button"
                 android:text="@string/zero"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:textAllCaps="false"
+                android:textColor="#FFFF"
+                android:textSize="33sp" />
+
             <Button
-                style="?android:attr/buttonStyle"
-                android:background="@color/button"
                 android:id="@+id/point"
-                android:textSize="33sp"
-                android:textColor="#FFFF"
-                android:textAllCaps="false"
-                android:text="@string/point"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
-            <Button
                 style="?android:attr/buttonStyle"
-                android:background="@color/button"
-                android:id="@+id/result"
-                android:textSize="33sp"
-                android:textColor="#FFFF"
-                android:textAllCaps="false"
-                android:text="@string/result"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:background="@color/button"
+                android:text="@string/point"
+                android:textAllCaps="false"
+                android:textColor="#FFFF"
+                android:textSize="33sp" />
+
+            <Button
+                android:id="@+id/result"
+                style="?android:attr/buttonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/button"
+                android:text="@string/result"
+                android:textAllCaps="false"
+                android:textColor="#FFFF"
+                android:textSize="33sp" />
         </LinearLayout>
 
     </LinearLayout>
+
 </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
