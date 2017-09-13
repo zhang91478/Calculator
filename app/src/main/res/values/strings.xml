@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Calculator</string>
+    <string name="option1">进制转换</string>
+    <string name="option2">科学计数</string>
+    <string name="erJinZi">二        进        制:</string>
+    <string name="baJinZi">八        进        制:</string>
+    <string name="siJinZi">十        进        制:</string>
+    <string name="siLiuJinZi">十六进制:</string>
 </resources>

@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="paddingforbutton">13dp</dimen>
+    <dimen name="paddingForButton">13dp</dimen>
+    <dimen name="textSize">23sp</dimen>
+    <dimen name="activityOneTextSize">33sp</dimen>
 </resources>
