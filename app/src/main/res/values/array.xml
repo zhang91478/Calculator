@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="length_menu">
+        <item>英尺ft</item>
+        <item>分米dm</item>
+        <item>公里 km</item>
+        <item>海里 nmi</item>
+        <item>英里 mi</item>
+        <item>英寸 in</item>
+        <item>米 m</item>
+        <item>毫米 mm</item>
+        <item>微米 μm</item>
+    </string-array>
+    <string-array name="weight_menu">
+        <item>千克 kg</item>
+        <item>克 g</item>
+        <item>毫克 mg</item>
+        <item>盎司 oz</item>
+        <item>吨  t</item>
+        <item>磅  lb</item>
+    </string-array>
+    <string-array name="area_menu">
+        <item>平方千米km²</item>
+        <item>平方米m²</item>
+        <item>平方英里sm</item>
+        <item>英亩acre</item>
+        <item>平方英寸si</item>
+        <item>公顷ha</item>
+    </string-array>
+    <string-array name="money_menu">
+        <item>人民币CNY</item>
+        <item>美元USD</item>
+        <item>港币HKD</item>
+        <item>欧元EUR</item>
+        <item>日元JPY</item>
+        <item>英镑GBP</item>
+    </string-array>
+</resources>

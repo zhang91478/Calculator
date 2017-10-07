@@ -4,12 +4,44 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
     <item android:id="@+id/option1"
-        android:title="@string/option2"
+        android:title="@string/option1"
         app:showAsAction="never"
         />
     <item
         android:id="@+id/option2"
-        android:title="@string/option1"
+        android:title="@string/option2"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/option3"
+        android:title="@string/option3"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/option4"
+        android:title="@string/option4"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/option5"
+        android:title="@string/option5"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/option6"
+        android:title="@string/option6"
+        app:showAsAction="never"
+        />
+    <!--
+    <item
+        android:id="@+id/option7"
+        android:title="@string/option7"
+        app:showAsAction="never"
+        />
+        -->
+    <item
+        android:id="@+id/option8"
+        android:title="@string/option8"
         app:showAsAction="never"
         />
 

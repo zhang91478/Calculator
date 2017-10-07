@@ -29,12 +29,36 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
         Intent intent = new Intent();
         switch (id){
+            case R.id.option1:
+                intent.setClass(this,MainActivity.class);
+                startActivity(intent);
+                break;
             case R.id.option2:
                 intent.setClass(this,ActivityOne.class);
                 startActivity(intent);
                 break;
-            case R.id.option1:
-                intent.setClass(this,MainActivity.class);
+            case R.id.option3:
+                intent.setClass(this,ActivityTwo.class);
+                startActivity(intent);
+                break;
+            case R.id.option4:
+                intent.setClass(this,ActivityThree.class);
+                startActivity(intent);
+                break;
+            case R.id.option5:
+                intent.setClass(this,ActivityFour.class);
+                startActivity(intent);
+                break;
+            case R.id.option6:
+                intent.setClass(this,ActivityFive.class);
+                startActivity(intent);
+                break;
+         /*   case R.id.option7:
+                intent.setClass(this,ActivitySix.class);
+                startActivity(intent);
+                break;*/
+            case R.id.option8:
+                intent.setClass(this,ActivitySeven.class);
                 startActivity(intent);
                 break;
         }

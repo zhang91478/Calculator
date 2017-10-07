@@ -4,9 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Editable;
 import android.text.InputType;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -28,16 +26,39 @@ public class ActivityOne extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         int id = item.getItemId();
         Intent intent = new Intent();
         switch (id){
+            case R.id.option1:
+                intent.setClass(this,MainActivity.class);
+                startActivity(intent);
+                break;
             case R.id.option2:
                 intent.setClass(this,ActivityOne.class);
                 startActivity(intent);
                 break;
-            case R.id.option1:
-                intent.setClass(this,MainActivity.class);
+            case R.id.option3:
+                intent.setClass(this,ActivityTwo.class);
+                startActivity(intent);
+                break;
+            case R.id.option4:
+                intent.setClass(this,ActivityThree.class);
+                startActivity(intent);
+                break;
+            case R.id.option5:
+                intent.setClass(this,ActivityFour.class);
+                startActivity(intent);
+                break;
+            case R.id.option6:
+                intent.setClass(this,ActivityFive.class);
+                startActivity(intent);
+                break;
+      /*      case R.id.option7:
+                intent.setClass(this,ActivitySix.class);
+                startActivity(intent);
+                break;*/
+            case R.id.option8:
+                intent.setClass(this,ActivitySeven.class);
                 startActivity(intent);
                 break;
         }
@@ -45,346 +66,137 @@ public class ActivityOne extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    EditText editText1;
+    EditText editText2;
+    EditText editText3;
+    EditText editText4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_one);
-
         Log.v("ActivityOne","onCreate");
-
-        final EditText editText1 = (EditText)findViewById(R.id.textViewEr);
-        final EditText editText2 = (EditText)findViewById(R.id.textViewBa);
-        final EditText editText3 = (EditText)findViewById(R.id.textViewSi);
-        final EditText editText4 = (EditText)findViewById(R.id.textViewShiLiu);
-
-        final  Button button00 = (Button) findViewById(R.id.buttonA);
-
-        final  Button button01 = (Button) findViewById(R.id.buttonB);
+        editText1 = (EditText)findViewById(R.id.textViewEr);
+        editText2 = (EditText)findViewById(R.id.textViewBa);
+        editText3 = (EditText)findViewById(R.id.textViewSi);
+        editText4 = (EditText)findViewById(R.id.textViewShiLiu);
+        final Button button00 = (Button) findViewById(R.id.buttonA);
+        final Button button01 = (Button) findViewById(R.id.buttonB);
         final Button button02 = (Button) findViewById(R.id.buttonC);
         final Button button03 = (Button) findViewById(R.id.buttonD);
         final Button button10 = (Button) findViewById(R.id.button9);
-        final  Button button11 = (Button) findViewById(R.id.button8);
-        final  Button button12 = (Button) findViewById(R.id.button7);
-        final  Button button13 = (Button) findViewById(R.id.buttonE);
-        final  Button button20 = (Button) findViewById(R.id.button6);
-        final  Button button21 = (Button) findViewById(R.id.button5);
-        final  Button button22 = (Button) findViewById(R.id.button4);
-        final  Button button23 = (Button) findViewById(R.id.buttonF);
-        final  Button button30 = (Button) findViewById(R.id.button3);
-        final  Button button31 = (Button) findViewById(R.id.button2);
-        final  Button button32 = (Button) findViewById(R.id.button1);
-        final   Button button33 = (Button) findViewById(R.id.button0);
-        final   Button button04 = (Button) findViewById(R.id.buttonClear);
-        final   Button button14 = (Button) findViewById(R.id.buttonBack);
-
-
+        final Button button11 = (Button) findViewById(R.id.button8);
+        final Button button12 = (Button) findViewById(R.id.button7);
+        final Button button13 = (Button) findViewById(R.id.buttonE);
+        final Button button20 = (Button) findViewById(R.id.button6);
+        final Button button21 = (Button) findViewById(R.id.button5);
+        final Button button22 = (Button) findViewById(R.id.button4);
+        final Button button23 = (Button) findViewById(R.id.buttonF);
+        final Button button30 = (Button) findViewById(R.id.button3);
+        final Button button31 = (Button) findViewById(R.id.button2);
+        final Button button32 = (Button) findViewById(R.id.button1);
+        final Button button33 = (Button) findViewById(R.id.button0);
+        final Button button04 = (Button) findViewById(R.id.buttonClear);
+        final Button button14 = (Button) findViewById(R.id.buttonBack);
         editText1.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                button00.setClickable(false);
-                button00.setTextColor(Color.rgb(158,157,157));
 
-                button01.setClickable(false);
-                button01.setTextColor(Color.rgb(158,157,157));
+                buttonColor(button00,false,97,98,98);
+                buttonColor(button01,false,97,98,98);
+                buttonColor(button02,false,97,98,98);
+                buttonColor(button03,false,97,98,98);
+                buttonColor(button10,false,97,98,98);
+                buttonColor(button11,false,97,98,98);
+                buttonColor(button12,false,97,98,98);
+                buttonColor(button13,false,97,98,98);
+                buttonColor(button20,false,97,98,98);
+                buttonColor(button21,false,97,98,98);
+                buttonColor(button22,false,97,98,98);
+                buttonColor(button23,false,97,98,98);
+                buttonColor(button30,false,97,98,98);
+                buttonColor(button31,false,97,98,98);
+                buttonColor(button32,true,0,0,0);
+                buttonColor(button33,true,0,0,0);
 
-                button02.setClickable(false);
-                button02.setTextColor(Color.rgb(158,157,157));
-
-                button03.setClickable(false);
-                button03.setTextColor(Color.rgb(158,157,157));
-
-                button10.setClickable(false);
-                button10.setTextColor(Color.rgb(158,157,157));
-
-                button11.setClickable(false);
-                button11.setTextColor(Color.rgb(158,157,157));
-
-                button12.setClickable(false);
-                button12.setTextColor(Color.rgb(158,157,157));
-
-                button13.setClickable(false);
-                button13.setTextColor(Color.rgb(158,157,157));
-
-                button20.setClickable(false);
-                button20.setTextColor(Color.rgb(158,157,157));
-
-                button21.setClickable(false);
-                button21.setTextColor(Color.rgb(158,157,157));
-
-                button22.setClickable(false);
-                button22.setTextColor(Color.rgb(158,157,157));
-
-                button23.setClickable(false);
-                button23.setTextColor(Color.rgb(158,157,157));
-
-                button23.setClickable(false);
-                button23.setTextColor(Color.rgb(158,157,157));
-
-                button30.setClickable(false);
-                button30.setTextColor(Color.rgb(158,157,157));
-
-                button31.setClickable(false);
-                button31.setTextColor(Color.rgb(158,157,157));
-
-                button32.setClickable(true);
-                button32.setTextColor(Color.rgb(255,255,255));
-
-                button33.setClickable(true);
-                button33.setTextColor(Color.rgb(255,255,255));
 
                 editText1.setInputType(InputType.TYPE_NULL); // 关闭软键盘
                 return false;
             }
         });
-/*
-        editText1.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                //do nothing
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });
-
-        editText2.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                //do nothing
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });
-
-        editText3.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                //do nothing
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });
-
-        editText4.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                //do nothing
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });
-
-*/
         editText2.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                button00.setClickable(false);
-                button00.setTextColor(Color.rgb(158,157,157));
+                buttonColor(button00,false,97,98,98);
+                buttonColor(button01,false,97,98,98);
+                buttonColor(button02,false,97,98,98);
+                buttonColor(button03,false,97,98,98);
+                buttonColor(button10,false,97,98,98);
+                buttonColor(button11,false,97,98,98);
+                buttonColor(button12,true,0,0,0);
+                buttonColor(button13,false,97,98,98);
+                buttonColor(button20,true,0,0,0);
+                buttonColor(button21,true,0,0,0);
+                buttonColor(button22,true,0,0,0);
+                buttonColor(button23,false,97,98,98);
+                buttonColor(button30,true,0,0,0);
+                buttonColor(button31,true,0,0,0);
+                buttonColor(button32,true,0,0,0);
+                buttonColor(button33,true,0,0,0);
 
-                button01.setClickable(false);
-                button01.setTextColor(Color.rgb(158,157,157));
-
-                button02.setClickable(false);
-                button02.setTextColor(Color.rgb(158,157,157));
-
-                button03.setClickable(false);
-                button03.setTextColor(Color.rgb(158,157,157));
-
-                button10.setClickable(false);
-                button10.setTextColor(Color.rgb(158,157,157));
-
-                button11.setClickable(false);
-                button11.setTextColor(Color.rgb(158,157,157));
-
-                button12.setClickable(true);
-                button12.setTextColor(Color.rgb(255,255,255));
-
-                button13.setClickable(false);
-                button13.setTextColor(Color.rgb(158,157,157));
-
-                button20.setClickable(true);
-                button20.setTextColor(Color.rgb(255,255,255));
-
-                button21.setClickable(true);
-                button21.setTextColor(Color.rgb(255,255,255));
-
-                button22.setClickable(true);
-                button22.setTextColor(Color.rgb(255,255,255));
-
-                button23.setClickable(false);
-                button23.setTextColor(Color.rgb(158,157,157));
-
-                button23.setClickable(false);
-                button23.setTextColor(Color.rgb(158,157,157));
-
-                button30.setClickable(true);
-                button30.setTextColor(Color.rgb(255,255,255));
-
-                button31.setClickable(true);
-                button31.setTextColor(Color.rgb(255,255,255));
-
-                button32.setClickable(true);
-                button32.setTextColor(Color.rgb(255,255,255));
-
-                button33.setClickable(true);
-                button33.setTextColor(Color.rgb(255,255,255));
 
                 editText2.setInputType(InputType.TYPE_NULL); // 关闭软键盘
                 return false;
             }
         });
-
         editText3.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                button00.setClickable(false);
-                button00.setTextColor(Color.rgb(158,157,157));
+                buttonColor(button00,false,97,98,98);
+                buttonColor(button01,false,97,98,98);
+                buttonColor(button02,false,97,98,98);
+                buttonColor(button03,false,97,98,98);
+                buttonColor(button10,true,0,0,0);
+                buttonColor(button11,true,0,0,0);
+                buttonColor(button12,true,0,0,0);
+                buttonColor(button13,false,97,98,98);
+                buttonColor(button20,true,0,0,0);
+                buttonColor(button21,true,0,0,0);
+                buttonColor(button22,true,0,0,0);
+                buttonColor(button23,false,97,98,98);
+                buttonColor(button30,true,0,0,0);
+                buttonColor(button31,true,0,0,0);
+                buttonColor(button32,true,0,0,0);
+                buttonColor(button33,true,0,0,0);
 
-                button01.setClickable(false);
-                button01.setTextColor(Color.rgb(158,157,157));
-
-                button02.setClickable(false);
-                button02.setTextColor(Color.rgb(158,157,157));
-
-                button03.setClickable(false);
-                button03.setTextColor(Color.rgb(158,157,157));
-
-                button10.setClickable(true);
-                button10.setTextColor(Color.rgb(255,255,255));
-
-                button11.setClickable(true);
-                button11.setTextColor(Color.rgb(255,255,255));
-
-                button12.setClickable(true);
-                button12.setTextColor(Color.rgb(255,255,255));
-
-                button13.setClickable(false);
-                button13.setTextColor(Color.rgb(158,157,157));
-
-                button20.setClickable(true);
-                button20.setTextColor(Color.rgb(255,255,255));
-
-                button21.setClickable(true);
-                button21.setTextColor(Color.rgb(255,255,255));
-
-                button22.setClickable(true);
-                button22.setTextColor(Color.rgb(255,255,255));
-
-                button23.setClickable(false);
-                button23.setTextColor(Color.rgb(158,157,157));
-
-                button23.setClickable(false);
-                button23.setTextColor(Color.rgb(158,157,157));
-
-                button30.setClickable(true);
-                button30.setTextColor(Color.rgb(255,255,255));
-
-                button31.setClickable(true);
-                button31.setTextColor(Color.rgb(255,255,255));
-
-                button32.setClickable(true);
-                button32.setTextColor(Color.rgb(255,255,255));
-
-                button33.setClickable(true);
-                button33.setTextColor(Color.rgb(255,255,255));
 
                 editText3.setInputType(InputType.TYPE_NULL); // 关闭软键盘
                 return false;
             }
         });
-
         editText4.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-
-                button00.setClickable(true);
-                button00.setTextColor(Color.rgb(255,255,255));
-
-                button01.setClickable(true);
-                button01.setTextColor(Color.rgb(255,255,255));
-
-                button02.setClickable(true);
-                button02.setTextColor(Color.rgb(255,255,255));
-
-                button03.setClickable(true);
-                button03.setTextColor(Color.rgb(255,255,255));
-
-                button10.setClickable(true);
-                button10.setTextColor(Color.rgb(255,255,255));
-
-                button11.setClickable(true);
-                button11.setTextColor(Color.rgb(255,255,255));
-
-                button12.setClickable(true);
-                button12.setTextColor(Color.rgb(255,255,255));
-
-                button13.setClickable(true);
-                button13.setTextColor(Color.rgb(255,255,255));
-
-                button20.setClickable(true);
-                button20.setTextColor(Color.rgb(255,255,255));
-
-                button21.setClickable(true);
-                button21.setTextColor(Color.rgb(255,255,255));
-
-                button22.setClickable(true);
-                button22.setTextColor(Color.rgb(255,255,255));
-
-                button23.setClickable(true);
-                button23.setTextColor(Color.rgb(255,255,255));
-
-                button23.setClickable(true);
-                button23.setTextColor(Color.rgb(255,255,255));
-
-                button30.setClickable(true);
-                button30.setTextColor(Color.rgb(255,255,255));
-
-                button31.setClickable(true);
-                button31.setTextColor(Color.rgb(255,255,255));
-
-                button32.setClickable(true);
-                button32.setTextColor(Color.rgb(255,255,255));
-
-                button33.setClickable(true);
-                button33.setTextColor(Color.rgb(255,255,255));
+                buttonColor(button00,true,0,0,0);
+                buttonColor(button01,true,0,0,0);
+                buttonColor(button02,true,0,0,0);
+                buttonColor(button03,true,0,0,0);
+                buttonColor(button10,true,0,0,0);
+                buttonColor(button11,true,0,0,0);
+                buttonColor(button12,true,0,0,0);
+                buttonColor(button13,true,0,0,0);
+                buttonColor(button20,true,0,0,0);
+                buttonColor(button21,true,0,0,0);
+                buttonColor(button22,true,0,0,0);
+                buttonColor(button23,true,0,0,0);
+                buttonColor(button30,true,0,0,0);
+                buttonColor(button31,true,0,0,0);
+                buttonColor(button32,true,0,0,0);
+                buttonColor(button33,true,0,0,0);
 
                 editText4.setInputType(InputType.TYPE_NULL); // 关闭软键盘
-
                 return false;
             }
         });
-
         button04.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -400,11 +212,10 @@ public class ActivityOne extends AppCompatActivity {
                 if(editText1.isFocused()){
                     editText1.setFocusable(true);
                     text = editText1.getText().toString();
-                //    editText1.setSelection(text.length());
+                    if(!text.isEmpty())
+                        text=text.substring(0,text.length()-1);
                     if(text.isEmpty())
                         text = "0";
-                    else
-                        text=text.substring(0,text.length()-1);
                     editText1.setText(text);
                     Integer temp = Integer.valueOf(text,2);
                     editText2.setText(Integer.toOctalString(temp));
@@ -414,7 +225,6 @@ public class ActivityOne extends AppCompatActivity {
                 else if(editText2.isFocused()){
                     editText2.setFocusable(true);
                     text = editText2.getText().toString();
-                //    editText2.setSelection(text.length());
                     if(text.isEmpty())
                         text = "0";
                     else
@@ -427,7 +237,6 @@ public class ActivityOne extends AppCompatActivity {
                 } else if(editText3.isFocused()){
                     editText3.setFocusable(true);
                     text = editText3.getText().toString();
-                 //   editText3.setSelection(text.length());
                     if(text.isEmpty())
                         text = "0";
                     else
@@ -456,17 +265,40 @@ public class ActivityOne extends AppCompatActivity {
 
 
         });
+        buttonAction(button00,"A");
+        buttonAction(button01,"B");
+        buttonAction(button02,"C");
+        buttonAction(button03,"D");
+        buttonAction(button10,"9");
+        buttonAction(button11,"8");
+        buttonAction(button12,"7");
+        buttonAction(button13,"E");
+        buttonAction(button20,"6");
+        buttonAction(button21,"5");
+        buttonAction(button22,"4");
+        buttonAction(button23,"F");
+        buttonAction(button30,"3");
+        buttonAction(button31,"2");
+        buttonAction(button32,"1");
+        buttonAction(button33,"0");
 
-        button33.setOnClickListener(new View.OnClickListener() {
+    }
+    private void buttonColor(Button bt,boolean bl,int r,int g,int b){
+        bt.setClickable(bl);
+        bt.setTextColor(Color.rgb(r,g,b));
+    }
+    private void buttonAction(Button bt, final String str){
+        bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 if(editText1.isFocused()){
                     editText1.setFocusable(true);
                     text = editText1.getText().toString();
                     if(text.equals("0"))
-                        text = "0";
+                        text = str;
                     else
-                        text = text + "0";
+                        text = text + str;
                     editText1.setText(text);
                     Integer temp = Integer.valueOf(text,2);
                     editText2.setText(Integer.toOctalString(temp));
@@ -477,9 +309,9 @@ public class ActivityOne extends AppCompatActivity {
                     editText2.setFocusable(true);
                     text = editText2.getText().toString();
                     if(text.equals("0"))
-                        text = "0";
+                        text = str;
                     else
-                        text = text + "0";
+                        text = text + str;
                     editText2.setText(text);
                     Integer temp= Integer.valueOf(text,8);
                     editText1.setText(Integer.toBinaryString(temp));
@@ -489,9 +321,9 @@ public class ActivityOne extends AppCompatActivity {
                     editText3.setFocusable(true);
                     text = editText3.getText().toString();
                     if(text.equals("0"))
-                        text = "0";
+                        text = str;
                     else
-                        text = text + "0";
+                        text = text + str;
                     editText3.setText(text);
                     Integer temp= Integer.parseInt(text);
                     editText1.setText(Integer.toBinaryString(temp));
@@ -501,539 +333,9 @@ public class ActivityOne extends AppCompatActivity {
                     editText4.setFocusable(true);
                     text = editText4.getText().toString();
                     if(text.equals("0"))
-                        text = "0";
+                        text = str;
                     else
-                        text = text + "0";
-                    editText4.setText(text);
-                    Integer temp= Integer.valueOf(text,16);
-                    editText1.setText(Integer.toBinaryString(temp));
-                    editText3.setText(temp.toString());
-                    editText2.setText(Integer.toOctalString(temp).toUpperCase());
-                }
-
-            }
-        });
-
-        button32.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                if(editText1.isFocused()){
-                    editText1.setFocusable(true);
-                    text = editText1.getText().toString();
-                    if(text.equals("0"))
-                        text = "";
-                    else
-                        text = text + "1";
-                    editText1.setText(text);
-                    Integer temp = Integer.valueOf(text,2);
-                    editText2.setText(Integer.toOctalString(temp));
-                    editText3.setText(temp.toString());
-                    editText4.setText(Integer.toHexString(temp).toUpperCase());
-                }
-                else if(editText2.isFocused()){
-                    editText2.setFocusable(true);
-                    text = editText2.getText().toString();
-                    if(text.equals("0"))
-                        text = "";
-                    else
-                        text = text + "1";
-                    editText2.setText(text);
-                    Integer temp= Integer.valueOf(text,8);
-                    editText1.setText(Integer.toBinaryString(temp));
-                    editText3.setText(temp.toString());
-                    editText4.setText(Integer.toHexString(temp).toUpperCase());
-                } else if(editText3.isFocused()){
-                    editText3.setFocusable(true);
-                    text = editText3.getText().toString();
-                    if(text.equals("0"))
-                        text = "";
-                    else
-                        text = text + "1";
-                    editText3.setText(text);
-                    Integer temp= Integer.parseInt(text);
-                    editText1.setText(Integer.toBinaryString(temp));
-                    editText2.setText(Integer.toOctalString(temp));
-                    editText4.setText(Integer.toHexString(temp).toUpperCase());
-                } else if(editText4.isFocused()){
-                    editText4.setFocusable(true);
-                    text = editText4.getText().toString();
-                    if(text.equals("0"))
-                        text = "";
-                    else
-                        text = text + "1";
-                    editText4.setText(text);
-                    Integer temp= Integer.valueOf(text,16);
-                    editText1.setText(Integer.toBinaryString(temp));
-                    editText3.setText(temp.toString());
-                    editText2.setText(Integer.toOctalString(temp).toUpperCase());
-                }
-
-            }
-        });
-
-
-        button31.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                if(editText2.isFocused()){
-                    editText2.setFocusable(true);
-                    text = editText2.getText().toString();
-                    if(text.equals("0"))
-                        text = "";
-                    else
-                        text = text + "2";
-                    editText2.setText(text);
-                    Integer temp= Integer.valueOf(text,8);
-                    editText1.setText(Integer.toBinaryString(temp));
-                    editText3.setText(temp.toString());
-                    editText4.setText(Integer.toHexString(temp).toUpperCase());
-                } else if(editText3.isFocused()){
-                    editText3.setFocusable(true);
-                    text = editText3.getText().toString();
-                    if(text.equals("0"))
-                        text = "";
-                    else
-                        text = text + "2";
-                    editText3.setText(text);
-                    Integer temp= Integer.parseInt(text);
-                    editText1.setText(Integer.toBinaryString(temp));
-                    editText2.setText(Integer.toOctalString(temp));
-                    editText4.setText(Integer.toHexString(temp).toUpperCase());
-                } else if(editText4.isFocused()){
-                    editText4.setFocusable(true);
-                    text = editText4.getText().toString();
-                    if(text.equals("0"))
-                        text = "";
-                    else
-                        text = text + "2";
-                    editText4.setText(text);
-                    Integer temp= Integer.valueOf(text,16);
-                    editText1.setText(Integer.toBinaryString(temp));
-                    editText3.setText(temp.toString());
-                    editText2.setText(Integer.toOctalString(temp).toUpperCase());
-                }
-
-            }
-        });
-
-        button30.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                if(editText2.isFocused()){
-                    editText2.setFocusable(true);
-                    text = editText2.getText().toString();
-                    if(text.equals("0"))
-                        text = "";
-                    else
-                        text = text + "3";
-                    editText2.setText(text);
-                    Integer temp= Integer.valueOf(text,8);
-                    editText1.setText(Integer.toBinaryString(temp));
-                    editText3.setText(temp.toString());
-                    editText4.setText(Integer.toHexString(temp).toUpperCase());
-                } else if(editText3.isFocused()){
-                    editText3.setFocusable(true);
-                    text = editText3.getText().toString();
-                    if(text.equals("0"))
-                        text = "";
-                    else
-                        text = text + "3";
-                    editText3.setText(text);
-                    Integer temp= Integer.parseInt(text);
-                    editText1.setText(Integer.toBinaryString(temp));
-                    editText2.setText(Integer.toOctalString(temp));
-                    editText4.setText(Integer.toHexString(temp).toUpperCase());
-                } else if(editText4.isFocused()){
-                    editText4.setFocusable(true);
-                    text = editText4.getText().toString();
-                    if(text.equals("0"))
-                        text = "";
-                    else
-                        text = text + "3";
-                    editText4.setText(text);
-                    Integer temp= Integer.valueOf(text,16);
-                    editText1.setText(Integer.toBinaryString(temp));
-                    editText3.setText(temp.toString());
-                    editText2.setText(Integer.toOctalString(temp).toUpperCase());
-                }
-
-            }
-        });
-
-        button22.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                if(editText2.isFocused()){
-                    editText2.setFocusable(true);
-                    text = editText2.getText().toString();
-                    if(text.equals("0"))
-                        text = "";
-                    else
-                        text = text + "4";
-                    editText2.setText(text);
-                    Integer temp= Integer.valueOf(text,8);
-                    editText1.setText(Integer.toBinaryString(temp));
-                    editText3.setText(temp.toString());
-                    editText4.setText(Integer.toHexString(temp).toUpperCase());
-                } else if(editText3.isFocused()){
-                    editText3.setFocusable(true);
-                    text = editText3.getText().toString();
-                    if(text.equals("0"))
-                        text = "";
-                    else
-                        text = text + "4";
-                    editText3.setText(text);
-                    Integer temp= Integer.parseInt(text);
-                    editText1.setText(Integer.toBinaryString(temp));
-                    editText2.setText(Integer.toOctalString(temp));
-                    editText4.setText(Integer.toHexString(temp).toUpperCase());
-                } else if(editText4.isFocused()){
-                    editText4.setFocusable(true);
-                    text = editText4.getText().toString();
-                    if(text.equals("0"))
-                        text = "";
-                    else
-                        text = text + "4";
-                    editText4.setText(text);
-                    Integer temp= Integer.valueOf(text,16);
-                    editText1.setText(Integer.toBinaryString(temp));
-                    editText3.setText(temp.toString());
-                    editText2.setText(Integer.toOctalString(temp).toUpperCase());
-                }
-
-            }
-        });
-
-        button21.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                if(editText2.isFocused()){
-                    editText2.setFocusable(true);
-                    text = editText2.getText().toString();
-                    if(text.equals("0"))
-                        text = "";
-                    else
-                        text = text + "5";
-                    editText2.setText(text);
-                    Integer temp= Integer.valueOf(text,8);
-                    editText1.setText(Integer.toBinaryString(temp));
-                    editText3.setText(temp.toString());
-                    editText4.setText(Integer.toHexString(temp).toUpperCase());
-                } else if(editText3.isFocused()){
-                    editText3.setFocusable(true);
-                    text = editText3.getText().toString();
-                    if(text.equals("0"))
-                        text = "";
-                    else
-                        text = text + "5";
-                    editText3.setText(text);
-                    Integer temp= Integer.parseInt(text);
-                    editText1.setText(Integer.toBinaryString(temp));
-                    editText2.setText(Integer.toOctalString(temp));
-                    editText4.setText(Integer.toHexString(temp).toUpperCase());
-                } else if(editText4.isFocused()){
-                    editText4.setFocusable(true);
-                    text = editText4.getText().toString();
-                    if(text.equals("0"))
-                        text = "";
-                    else
-                        text = text + "5";
-                    editText4.setText(text);
-                    Integer temp= Integer.valueOf(text,16);
-                    editText1.setText(Integer.toBinaryString(temp));
-                    editText3.setText(temp.toString());
-                    editText2.setText(Integer.toOctalString(temp).toUpperCase());
-                }
-
-            }
-        });
-
-
-        button20.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                if(editText2.isFocused()){
-                    editText2.setFocusable(true);
-                    text = editText2.getText().toString();
-                    if(text.equals("0"))
-                        text = "";
-                    else
-                        text = text + "6";
-                    editText2.setText(text);
-                    Integer temp= Integer.valueOf(text,8);
-                    editText1.setText(Integer.toBinaryString(temp));
-                    editText3.setText(temp.toString());
-                    editText4.setText(Integer.toHexString(temp).toUpperCase());
-                } else if(editText3.isFocused()){
-                    editText3.setFocusable(true);
-                    text = editText3.getText().toString();
-                    if(text.equals("0"))
-                        text = "";
-                    else
-                        text = text + "6";
-                    editText3.setText(text);
-                    Integer temp= Integer.parseInt(text);
-                    editText1.setText(Integer.toBinaryString(temp));
-                    editText2.setText(Integer.toOctalString(temp));
-                    editText4.setText(Integer.toHexString(temp).toUpperCase());
-                } else if(editText4.isFocused()){
-                    editText4.setFocusable(true);
-                    text = editText4.getText().toString();
-                    if(text.equals("0"))
-                        text = "";
-                    else
-                        text = text + "6";
-                    editText4.setText(text);
-                    Integer temp= Integer.valueOf(text,16);
-                    editText1.setText(Integer.toBinaryString(temp));
-                    editText3.setText(temp.toString());
-                    editText2.setText(Integer.toOctalString(temp).toUpperCase());
-                }
-
-            }
-        });
-
-        button12.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                if(editText2.isFocused()){
-                    editText2.setFocusable(true);
-                    text = editText2.getText().toString();
-                    if(text.equals("0"))
-                        text = "";
-                    else
-                        text = text + "7";
-                    editText2.setText(text);
-                    Integer temp= Integer.valueOf(text,8);
-                    editText1.setText(Integer.toBinaryString(temp));
-                    editText3.setText(temp.toString());
-                    editText4.setText(Integer.toHexString(temp).toUpperCase());
-                } else if(editText3.isFocused()){
-                    editText3.setFocusable(true);
-                    text = editText3.getText().toString();
-                    if(text.equals("0"))
-                        text = "";
-                    else
-                        text = text + "7";
-                    editText3.setText(text);
-                    Integer temp= Integer.parseInt(text);
-                    editText1.setText(Integer.toBinaryString(temp));
-                    editText2.setText(Integer.toOctalString(temp));
-                    editText4.setText(Integer.toHexString(temp).toUpperCase());
-                } else if(editText4.isFocused()){
-                    editText4.setFocusable(true);
-                    text = editText4.getText().toString();
-                    if(text.equals("0"))
-                        text = "";
-                    else
-                        text = text + "7";
-                    editText4.setText(text);
-                    Integer temp= Integer.valueOf(text,16);
-                    editText1.setText(Integer.toBinaryString(temp));
-                    editText3.setText(temp.toString());
-                    editText2.setText(Integer.toOctalString(temp).toUpperCase());
-                }
-
-            }
-        });
-
-        button11.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                if(editText2.isFocused()){
-                    editText2.setFocusable(true);
-                    text = editText2.getText().toString();
-                    if(text.equals("0"))
-                        text = "";
-                    else
-                        text = text + "8";
-                    editText2.setText(text);
-                } else if(editText3.isFocused()){
-                    editText3.setFocusable(true);
-                    text = editText3.getText().toString();
-                    if(text.equals("0"))
-                        text = "";
-                    else
-                        text = text + "8";
-                    editText3.setText(text);
-                    Integer temp= Integer.parseInt(text);
-                    editText1.setText(Integer.toBinaryString(temp));
-                    editText2.setText(Integer.toOctalString(temp));
-                    editText4.setText(Integer.toHexString(temp).toUpperCase());
-                } else if(editText4.isFocused()){
-                    editText4.setFocusable(true);
-                    text = editText4.getText().toString();
-                    if(text.equals("0"))
-                        text = "";
-                    else
-                        text = text + "8";
-                    editText4.setText(text);
-                    Integer temp= Integer.valueOf(text,16);
-                    editText1.setText(Integer.toBinaryString(temp));
-                    editText3.setText(temp.toString());
-                    editText2.setText(Integer.toOctalString(temp).toUpperCase());
-                }
-
-            }
-        });
-
-        button10.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                if(editText3.isFocused()){
-                    editText3.setFocusable(true);
-                    text = editText3.getText().toString();
-                    if(text.equals("0"))
-                        text = "";
-                    else
-                        text = text + "9";
-                    editText3.setText(text);
-                    Integer temp= Integer.parseInt(text);
-                    editText1.setText(Integer.toBinaryString(temp));
-                    editText2.setText(Integer.toOctalString(temp));
-                    editText4.setText(Integer.toHexString(temp).toUpperCase());
-                } else if(editText4.isFocused()){
-                    editText4.setFocusable(true);
-                    text = editText4.getText().toString();
-                    if(text.equals("0"))
-                        text = "";
-                    else
-                        text = text + "9";
-                    editText4.setText(text);
-                    Integer temp= Integer.valueOf(text,16);
-                    editText1.setText(Integer.toBinaryString(temp));
-                    editText3.setText(temp.toString());
-                    editText2.setText(Integer.toOctalString(temp).toUpperCase());
-                }
-
-            }
-        });
-
-        button00.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                if(editText4.isFocused()){
-                    editText4.setFocusable(true);
-                    text = editText4.getText().toString();
-                    if(text.equals("0"))
-                        text = "";
-                    else
-                        text = text + "A";
-                    editText4.setText(text);
-                    Integer temp= Integer.valueOf(text,16);
-                    editText1.setText(Integer.toBinaryString(temp));
-                    editText3.setText(temp.toString());
-                    editText2.setText(Integer.toOctalString(temp).toUpperCase());
-                }
-
-            }
-        });
-
-        button01.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                if(editText4.isFocused()){
-                    editText4.setFocusable(true);
-                    text = editText4.getText().toString();
-                    if(text.equals("0"))
-                        text = "";
-                    else
-                        text = text + "B";
-                    editText4.setText(text);
-                    Integer temp= Integer.valueOf(text,16);
-                    editText1.setText(Integer.toBinaryString(temp));
-                    editText3.setText(temp.toString());
-                    editText2.setText(Integer.toOctalString(temp).toUpperCase());
-                }
-
-            }
-        });
-
-        button02.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                if(editText4.isFocused()){
-                    editText4.setFocusable(true);
-                    text = editText4.getText().toString();
-                    if(text.equals("0"))
-                        text = "";
-                    else
-                        text = text + "C";
-                    editText4.setText(text);
-                    Integer temp= Integer.valueOf(text,16);
-                    editText1.setText(Integer.toBinaryString(temp));
-                    editText3.setText(temp.toString());
-                    editText2.setText(Integer.toOctalString(temp).toUpperCase());
-                }
-
-            }
-        });
-
-        button03.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                if(editText4.isFocused()){
-                    editText4.setFocusable(true);
-                    text = editText4.getText().toString();
-                    if(text.equals("0"))
-                        text = "";
-                    else
-                        text = text + "D";
-                    editText4.setText(text);
-                    Integer temp= Integer.valueOf(text,16);
-                    editText1.setText(Integer.toBinaryString(temp));
-                    editText3.setText(temp.toString());
-                    editText2.setText(Integer.toOctalString(temp).toUpperCase());
-                }
-
-            }
-        });
-
-        button13.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                if(editText4.isFocused()){
-                    editText4.setFocusable(true);
-                    text = editText4.getText().toString();
-                    if(text.equals("0"))
-                        text = "";
-                    else
-                        text = text + "E";
-                    editText4.setText(text);
-                    Integer temp= Integer.valueOf(text,16);
-                    editText1.setText(Integer.toBinaryString(temp));
-                    editText3.setText(temp.toString());
-                    editText2.setText(Integer.toOctalString(temp).toUpperCase());
-                }
-
-            }
-        });
-
-        button23.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                if(editText4.isFocused()){
-                    editText4.setFocusable(true);
-                    text = editText4.getText().toString();
-                    if(text.equals("0"))
-                        text = "";
-                    else
-                        text = text + "F";
+                        text = text + str;
                     editText4.setText(text);
                     Integer temp= Integer.valueOf(text,16);
                     editText1.setText(Integer.toBinaryString(temp));

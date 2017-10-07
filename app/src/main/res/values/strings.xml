@@ -1,7 +1,13 @@
 <resources>
     <string name="app_name">Calculator</string>
-    <string name="option1">进制转换</string>
-    <string name="option2">科学计数</string>
+    <string name="option1">科学计算</string>
+    <string name="option2">进制转换</string>
+    <string name="option3">长度转换</string>
+    <string name="option4">重量转换</string>
+    <string name="option5">面积转换</string>
+    <string name="option6">极差方差</string>
+    <string name="option7">房贷</string>
+    <string name="option8">汇率</string>
     <string name="erJinZi">二        进        制:</string>
     <string name="baJinZi">八        进        制:</string>
     <string name="siJinZi">十        进        制:</string>

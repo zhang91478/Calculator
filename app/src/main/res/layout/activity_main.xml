@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:gravity="end|right"
         android:text="结果框"
-        android:textColor="#fcfbfb"
+        android:textColor="@color/text"
         android:layout_weight="1"
         />
 
@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:gravity="end|right"
         android:text="输入框"
-        android:textColor="#fffefe"
+        android:textColor="@color/text"
         android:maxLines="1"
         />
 
@@ -57,7 +57,7 @@
                 android:layout_weight="1"
                 android:background="@color/button"
                 android:text="@string/clear"
-                android:textColor="#ffffff"
+                android:textColor="@color/text"
                 android:textSize="33sp" />
 
             <Button
@@ -68,7 +68,7 @@
                 android:layout_weight="1"
                 android:background="@color/button"
                 android:text="@string/back"
-                android:textColor="#ffffff"
+                android:textColor="@color/text"
                 android:textSize="33sp"
                 />
 
@@ -80,7 +80,7 @@
                 android:layout_weight="1"
                 android:background="@color/button"
                 android:text="@string/percent"
-                android:textColor="#ffffff"
+                android:textColor="@color/text"
                 android:textSize="33sp" />
 
             <Button
@@ -91,7 +91,7 @@
                 android:layout_weight="1"
                 android:background="@color/button"
                 android:text="@string/parenthesis"
-                android:textColor="#ffffff"
+                android:textColor="@color/text"
                 android:textSize="33sp" />
 
             <Button
@@ -103,7 +103,7 @@
                 android:background="@color/button"
                 android:text="@string/pai"
                 android:textAllCaps="false"
-                android:textColor="#ffffff"
+                android:textColor="@color/text"
                 android:textSize="33sp" />
         </LinearLayout>
 
@@ -122,7 +122,7 @@
                 android:background="@color/button"
                 android:text="@string/sin"
                 android:textAllCaps="false"
-                android:textColor="#FFFF"
+                android:textColor="@color/text"
                 android:textSize="25sp" />
 
             <Button
@@ -133,7 +133,7 @@
                 android:layout_weight="1"
                 android:background="@color/button"
                 android:text="@string/radical"
-                android:textColor="#FFFF"
+                android:textColor="@color/text"
                 android:textSize="33sp" />
 
             <Button
@@ -145,7 +145,7 @@
                 android:background="@color/button"
                 android:text="@string/square"
                 android:textAllCaps="false"
-                android:textColor="#FFFF"
+                android:textColor="@color/text"
                 android:textSize="33sp" />
 
             <Button
@@ -157,7 +157,7 @@
                 android:background="@color/button"
                 android:text="@string/power"
                 android:textAllCaps="false"
-                android:textColor="#FFFF"
+                android:textColor="@color/text"
                 android:textSize="33sp" />
 
             <Button
@@ -169,7 +169,7 @@
                 android:background="@color/button"
                 android:text="@string/div"
                 android:textAllCaps="false"
-                android:textColor="#FFFF"
+                android:textColor="@color/text"
                 android:textSize="33sp" />
 
         </LinearLayout>
@@ -189,7 +189,7 @@
                 android:background="@color/button"
                 android:text="@string/cos"
                 android:textAllCaps="false"
-                android:textColor="#FFFF"
+                android:textColor="@color/text"
                 android:textSize="25sp" />
 
             <Button
@@ -201,7 +201,7 @@
                 android:background="@color/button"
                 android:text="@string/nine"
                 android:textAllCaps="false"
-                android:textColor="#FFFF"
+                android:textColor="@color/text"
                 android:textSize="33sp" />
 
             <Button
@@ -213,7 +213,7 @@
                 android:background="@color/button"
                 android:text="@string/eight"
                 android:textAllCaps="false"
-                android:textColor="#FFFF"
+                android:textColor="@color/text"
                 android:textSize="33sp" />
 
 
@@ -226,7 +226,7 @@
                 android:background="@color/button"
                 android:text="@string/seven"
                 android:textAllCaps="false"
-                android:textColor="#FFFF"
+                android:textColor="@color/text"
                 android:textSize="33sp" />
 
             <Button
@@ -238,7 +238,7 @@
                 android:background="@color/button"
                 android:text="@string/mul"
                 android:textAllCaps="false"
-                android:textColor="#FFFF"
+                android:textColor="@color/text"
                 android:textSize="33sp" />
         </LinearLayout>
 
@@ -257,7 +257,7 @@
                 android:background="@color/button"
                 android:text="@string/tan"
                 android:textAllCaps="false"
-                android:textColor="#FFFF"
+                android:textColor="@color/text"
                 android:textSize="25sp" />
 
 
@@ -270,7 +270,7 @@
                 android:background="@color/button"
                 android:text="@string/six"
                 android:textAllCaps="false"
-                android:textColor="#FFFF"
+                android:textColor="@color/text"
                 android:textSize="33sp" />
 
 
@@ -285,7 +285,7 @@
                 android:background="@color/button"
                 android:text="@string/fifth"
                 android:textAllCaps="false"
-                android:textColor="#FFFF"
+                android:textColor="@color/text"
                 android:textSize="33sp" />
 
             <Button
@@ -297,7 +297,7 @@
                 android:background="@color/button"
                 android:text="@string/four"
                 android:textAllCaps="false"
-                android:textColor="#FFFF"
+                android:textColor="@color/text"
                 android:textSize="33sp" />
 
             <Button
@@ -309,7 +309,7 @@
                 android:background="@color/button"
                 android:text="@string/sub"
                 android:textAllCaps="false"
-                android:textColor="#FFFF"
+                android:textColor="@color/text"
                 android:textSize="33sp" />
 
         </LinearLayout>
@@ -329,7 +329,7 @@
                 android:background="@color/button"
                 android:text="@string/ln"
                 android:textAllCaps="false"
-                android:textColor="#FFFF"
+                android:textColor="@color/text"
                 android:textSize="25sp" />
 
 
@@ -344,7 +344,7 @@
                 android:background="@color/button"
                 android:text="@string/three"
                 android:textAllCaps="false"
-                android:textColor="#FFFF"
+                android:textColor="@color/text"
                 android:textSize="33sp" />
 
             <Button
@@ -356,7 +356,7 @@
                 android:background="@color/button"
                 android:text="@string/two"
                 android:textAllCaps="false"
-                android:textColor="#FFFF"
+                android:textColor="@color/text"
                 android:textSize="33sp" />
 
             <Button
@@ -368,7 +368,7 @@
                 android:background="@color/button"
                 android:text="@string/one"
                 android:textAllCaps="false"
-                android:textColor="#FFFF"
+                android:textColor="@color/text"
                 android:textSize="33sp" />
 
             <Button
@@ -380,7 +380,7 @@
                 android:background="@color/button"
                 android:text="@string/add"
                 android:textAllCaps="false"
-                android:textColor="#FFFF"
+                android:textColor="@color/text"
                 android:textSize="33sp" />
 
 
@@ -401,7 +401,7 @@
                 android:background="@color/button"
                 android:text="@string/lg"
                 android:textAllCaps="false"
-                android:textColor="#FFFF"
+                android:textColor="@color/text"
                 android:textSize="25sp" />
 
             <Button
@@ -413,7 +413,7 @@
                 android:background="@color/button"
                 android:text="@string/e"
                 android:textAllCaps="false"
-                android:textColor="#FFFF"
+                android:textColor="@color/text"
                 android:textSize="25sp" />
 
             <Button
@@ -425,7 +425,7 @@
                 android:background="@color/button"
                 android:text="@string/zero"
                 android:textAllCaps="false"
-                android:textColor="#FFFF"
+                android:textColor="@color/text"
                 android:textSize="33sp" />
 
             <Button
@@ -437,7 +437,7 @@
                 android:background="@color/button"
                 android:text="@string/point"
                 android:textAllCaps="false"
-                android:textColor="#FFFF"
+                android:textColor="@color/text"
                 android:textSize="33sp" />
 
             <Button
@@ -449,7 +449,7 @@
                 android:background="@color/button"
                 android:text="@string/result"
                 android:textAllCaps="false"
-                android:textColor="#FFFF"
+                android:textColor="@color/text"
                 android:textSize="33sp" />
         </LinearLayout>
 
