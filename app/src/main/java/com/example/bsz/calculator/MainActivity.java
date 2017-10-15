@@ -3,18 +3,23 @@ package com.example.bsz.calculator;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.EditText;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    String text = "";
-    TextView textView1;
-    TextView textView2;
-    TextView textView3;
+    String text = "0";
+    EditText editText1;
+    EditText editText2;
+    int pointCan = 0;
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -70,338 +75,211 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        textView1 = (TextView) findViewById(R.id.textView1);
-        textView2 = (TextView) findViewById(R.id.textView2);
-        textView3 = (TextView) findViewById(R.id.textView3);
-
+        editText1 = (EditText) findViewById(R.id.textView1);
+        editText2 = (EditText) findViewById(R.id.textView2);
+        editText1.setInputType(InputType.TYPE_NULL);
+        editText2.setInputType(InputType.TYPE_NULL);
 
         Button button00 = (Button) findViewById(R.id.clear);
+        Button button01 = (Button) findViewById(R.id.back);
+        Button button02 = (Button) findViewById(R.id.percent);
+        Button button03 = (Button) findViewById(R.id.parenthesis);
+        Button button04 = (Button) findViewById(R.id.pai);
+        Button button10 = (Button) findViewById(R.id.sin);
+        Button button11 = (Button) findViewById(R.id.radical);
+        Button button12 = (Button) findViewById(R.id.square);
+        Button button13 = (Button) findViewById(R.id.power);
+        Button button14 = (Button) findViewById(R.id.div);
+        Button button20 = (Button) findViewById(R.id.cos);
+        Button button21 = (Button) findViewById(R.id.nine);
+        Button button22 = (Button) findViewById(R.id.eight);
+        Button button23 = (Button) findViewById(R.id.seven);
+        Button button24 = (Button) findViewById(R.id.mul);
+        Button button30 = (Button) findViewById(R.id.tan);
+        Button button31 = (Button) findViewById(R.id.six);
+        Button button32 = (Button) findViewById(R.id.fifth);
+        Button button33 = (Button) findViewById(R.id.four);
+        Button button34 = (Button) findViewById(R.id.sub);
+        Button button40 = (Button) findViewById(R.id.ln);
+        Button button41 = (Button) findViewById(R.id.three);
+        Button button42 = (Button) findViewById(R.id.two);
+        Button button43 = (Button) findViewById(R.id.one);
+        Button button44 = (Button) findViewById(R.id.add);
+        Button button50 = (Button) findViewById(R.id.lg);
+        Button button51 = (Button) findViewById(R.id.e);
+        Button button52 = (Button) findViewById(R.id.zero);
+        Button button53 = (Button) findViewById(R.id.point);
+        Button button54 = (Button) findViewById(R.id.result);
+
+        setCharButton(button04,"π");
+        setNumButton(button21,"9");
+        setNumButton(button22,"8");
+        setNumButton(button23,"7");
+        setNumButton(button31,"6");
+        setNumButton(button32,"5");
+        setNumButton(button33,"4");
+        setNumButton(button41,"3");
+        setNumButton(button42,"2");
+        setNumButton(button43,"1");
+        setNumButton(button52,"0");
+        setCharButton(button51,"e");
+        setCharButton(button02,"%");
+
         button00.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                textView3.setText("");//清空输入框
-                text = "";//清空字符串。
+                text ="0";
+                editText2.setText(text);
+                pointCan = 0;//防止point被重复点击
             }
+
         });
 
-        Button button01 = (Button) findViewById(R.id.back);
         button01.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //回退一个字符。
-                if(!text.isEmpty()) {
-                    text=text.substring(0,text.length()-1);
+                if(text.charAt(text.length()-1)=='.') {
+                    pointCan = 0;
                 }
-                //将回退的字符输出到输出框
-                textView3.setText(text);
+                text = editText2.getText().toString();
+                if(text.length()==1)
+                    text = "0";
+                else
+                    text=text.substring(0,text.length()-1);
+                editText2.setText(text);
             }
         });
 
-        Button button02 = (Button) findViewById(R.id.percent);
-        button02.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                text = text + "%";
-                textView1.setText(text);
-                textView2.setText(text);
-                textView3.setText(text);
-            }
-        });
-
-        Button button03 = (Button) findViewById(R.id.parenthesis);
         button03.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {//需要自己判断左右括号
-                text = text + "()";
-                textView1.setText(text);
-                textView2.setText(text);
-                textView3.setText(text);
-            }
-        });
-
-        Button button04 = (Button) findViewById(R.id.pai);
-        button04.setOnClickListener(new View.OnClickListener() {
-            @Override
             public void onClick(View view) {
-                text = text + "π";
-                textView1.setText(text);
-                textView2.setText(text);
-                textView3.setText(text);
+                char end = text.charAt(text.length()-1);
+                if(end =='1'||end == '2'||end == '3'||end == '4' ||
+                        end == '5'||end == '6'||end == '7'||end == '8'||end == '9'||end == '0'
+                        ||end == 'π'||end == 'e'){
+                    text = text +")";
+                }
+                else {
+                    text = text +"(";
+                }
+                editText2.setText(text);
+                pointCan = 0;//防止point被重复点击
             }
         });
 
-        Button button10 = (Button) findViewById(R.id.sin);
-        button10.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                text = text + "sin";
-                textView1.setText(text);
-                textView2.setText(text);
-                textView3.setText(text);
-            }
-        });
+        setLeftButton(button10,"sin");
+        setLeftButton(button20,"cos");
+        setLeftButton(button30,"tan");
+        setLeftButton(button40,"ln");
+        setLeftButton(button50,"log");
+        setLeftButton(button11,"√");
 
-        Button button11 = (Button) findViewById(R.id.radical);
-        button11.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                text = text + "√";
-                textView1.setText(text);
-                textView2.setText(text);
-                textView3.setText(text);
-            }
-        });
+        setRightButton(button14,"÷");
+        setRightButton(button24,"×");
+        setRightButton(button34,"-");
+        setRightButton(button44,"+");
+        setRightButton(button13,"^");
+        setRightButton(button12,"²");
 
-        Button button12 = (Button) findViewById(R.id.square);
-        button12.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                text = text + "²";
-                textView1.setText(text);
-                textView2.setText(text);
-                textView3.setText(text);
-            }
-        });
-
-        Button button13 = (Button) findViewById(R.id.power);
-        button13.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                text = text + "^";
-                textView1.setText(text);
-                textView2.setText(text);
-                textView3.setText(text);
-            }
-        });
-
-        Button button14 = (Button) findViewById(R.id.div);
-        button14.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                text = text + "÷";
-                textView1.setText(text);
-                textView2.setText(text);
-                textView3.setText(text);
-            }
-        });
-
-        Button button20 = (Button) findViewById(R.id.cos);
-        button20.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                text = text + "cos";
-                textView1.setText(text);
-                textView2.setText(text);
-                textView3.setText(text);
-            }
-        });
-
-        Button button21 = (Button) findViewById(R.id.seven);
-        button21.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                text = text + "7";
-                textView1.setText(text);
-                textView2.setText(text);
-                textView3.setText(text);
-            }
-        });
-
-        Button button22 = (Button) findViewById(R.id.eight);
-        button22.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                text = text + "8";
-                textView1.setText(text);
-                textView2.setText(text);
-                textView3.setText(text);
-            }
-        });
-
-        Button button23 = (Button) findViewById(R.id.nine);
-        button23.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                text = text + "9";
-                textView1.setText(text);
-                textView2.setText(text);
-                textView3.setText(text);
-            }
-        });
-
-        Button button24 = (Button) findViewById(R.id.mul);
-        button24.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                text = text + "×";
-                textView1.setText(text);
-                textView2.setText(text);
-                textView3.setText(text);
-            }
-        });
-
-        Button button30 = (Button) findViewById(R.id.tan);
-        button30.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                text = text + "tan";
-                textView1.setText(text);
-                textView2.setText(text);
-                textView3.setText(text);
-            }
-        });
-
-        Button button31 = (Button) findViewById(R.id.four);
-        button31.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                text = text + "4";
-                textView1.setText(text);
-                textView2.setText(text);
-                textView3.setText(text);
-            }
-        });
-
-        Button button32 = (Button) findViewById(R.id.fifth);
-        button32.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                text = text + "5";
-                textView1.setText(text);
-                textView2.setText(text);
-                textView3.setText(text);
-            }
-        });
-
-        Button button33 = (Button) findViewById(R.id.six);
-        button33.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                text = text + "6";
-                textView1.setText(text);
-                textView2.setText(text);
-                textView3.setText(text);
-            }
-        });
-
-        Button button34 = (Button) findViewById(R.id.sub);
-        button34.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                text = text + "-";
-                textView1.setText(text);
-                textView2.setText(text);
-                textView3.setText(text);
-            }
-        });
-
-        Button button40 = (Button) findViewById(R.id.ln);
-        button40.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                text = text + "ln";
-                textView1.setText(text);
-                textView2.setText(text);
-                textView3.setText(text);
-            }
-        });
-
-        Button button41 = (Button) findViewById(R.id.one);
-        button41.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                text = text + "1";
-                textView1.setText(text);
-                textView2.setText(text);
-                textView3.setText(text);
-            }
-        });
-
-        Button button42 = (Button) findViewById(R.id.two);
-        button42.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                text = text + "2";
-                textView1.setText(text);
-                textView2.setText(text);
-                textView3.setText(text);
-            }
-        });
-
-        Button button43 = (Button) findViewById(R.id.three);
-        button43.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                text = text + "3";
-                textView1.setText(text);
-                textView2.setText(text);
-                textView3.setText(text);
-            }
-        });
-
-        Button button44 = (Button) findViewById(R.id.add);
-        button44.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                text = text + "+";
-                textView1.setText(text);
-                textView2.setText(text);
-                textView3.setText(text);
-            }
-        });
-
-        Button button50 = (Button) findViewById(R.id.lg);
-        button50.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                text = text + "log";
-                textView1.setText(text);
-                textView2.setText(text);
-                textView3.setText(text);
-            }
-        });
-
-        Button button51 = (Button) findViewById(R.id.e);
-        button51.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                text = text + "e";
-                textView1.setText(text);
-                textView2.setText(text);
-                textView3.setText(text);
-            }
-        });
-
-        Button button52 = (Button) findViewById(R.id.zero);
-        button52.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                text = text + "0";
-                textView1.setText(text);
-                textView2.setText(text);
-                textView3.setText(text);
-            }
-        });
-
-        Button button53 = (Button) findViewById(R.id.point);
         button53.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                text = text + "•";
-                textView1.setText(text);
-                textView2.setText(text);
-                textView3.setText(text);
+                if(pointCan==1){
+                    text = text + '.';
+                    editText2.setText(text);
+                    pointCan = 2;
+                }
             }
         });
 
-        Button button54 = (Button) findViewById(R.id.result);
         button54.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                text = text + "=";
-                textView1.setText(text);
-                textView2.setText(text);
-                textView3.setText(text);
+                text = editText2.getText().toString();
+                editText1.setText(text);
+                String result = new CalculateHelper().result(text);
+                editText2.setText(result);
+            }
+        });
+    }
+
+
+    private void setNumButton(final Button button, final String str){
+        //按钮1，2，3，4，5，6，7，8，9，0
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                text = editText2.getText().toString();
+                char end = text.charAt(text.length()-1);
+                if(text.equals("0")){
+                    text="";
+                }
+                if(end =='π'||end=='e'||end==')') {
+                    text = text + "×";
+                }
+                text = text +str;
+                editText2.setText(text);
+                //为了防止point按钮被重复点击
+                if(pointCan==0) {
+                    pointCan = 1;
+                }
+            }
+        });
+    }
+    private void setCharButton(final Button button, final String str){
+        //按钮e π  %
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                text = editText2.getText().toString();
+                char end = text.charAt(text.length()-1);
+                if(text.equals("0")) {
+                    text = "";
+                }
+                if(end =='π'||end=='e'||end==')'||end =='0'||end =='1'
+                        ||end =='2'||end =='3'||end =='4'||end =='5'
+                        ||end =='6'||end =='7'||end =='8'||end =='9') {
+                    text = text + "×";
+                }else if(end=='.'){
+                    text = text + "0×";
+                }
+                text = text +str;
+                editText2.setText(text);
+                pointCan = 0;//防止point被重复点击
+            }
+        });
+    }
+
+    private void setLeftButton(final Button button,final String str){
+        //按钮sin,cos,tan,ln,log,√
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                text = editText2.getText().toString();
+                char end = text.charAt(text.length()-1);
+                if(text.equals("0")){
+                    text = "";
+                }
+                if(end =='+'||end =='-'||end =='×'||end == '÷'||end=='('||text.equals("")){
+                    text = text +str+"(";
+                }
+                else {
+                    text = text +"×"+str+"(";
+                }
+                editText2.setText(text);
+                pointCan = 0;//防止point被重复点击
+            }
+
+        });
+    }
+    private void setRightButton(final Button button,final String str){
+        //按钮 + - × ÷ .
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                text = text + str;
+                editText2.setText(text);
+                pointCan = 0;//防止point被重复点击
             }
         });
     }

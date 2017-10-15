@@ -197,7 +197,7 @@ public class ActivityThree extends AppCompatActivity {
                 if(editText1.isFocused()) {
                     editText1.setFocusable(true);
                     text = editText1.getText().toString();
-                    if(text.equals("0"))
+                    if(text.length()==1)
                         text = "0";
                     else
                         text=text.substring(0,text.length()-1);
@@ -209,7 +209,7 @@ public class ActivityThree extends AppCompatActivity {
                 else if(editText2.isFocused()) {
                     editText2.setFocusable(true);
                     text = editText2.getText().toString();
-                    if(text.equals("0"))
+                    if(text.length()==1)
                         text = "0";
                     else
                         text=text.substring(0,text.length()-1);
@@ -221,7 +221,7 @@ public class ActivityThree extends AppCompatActivity {
                 if(editText3.isFocused()) {
                     editText3.setFocusable(true);
                     text = editText3.getText().toString();
-                    if(text.equals("0"))
+                    if(text.length()==1)
                         text = "0";
                     else
                         text=text.substring(0,text.length()-1);

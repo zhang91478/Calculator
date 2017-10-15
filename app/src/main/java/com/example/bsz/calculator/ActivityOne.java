@@ -200,10 +200,10 @@ public class ActivityOne extends AppCompatActivity {
         button04.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editText1.setText("");
-                editText2.setText("");
-                editText3.setText("");
-                editText4.setText("");
+                editText1.setText("0");
+                editText2.setText("0");
+                editText3.setText("0");
+                editText4.setText("0");
             }
         });
         button14.setOnClickListener(new View.OnClickListener() {
@@ -212,10 +212,10 @@ public class ActivityOne extends AppCompatActivity {
                 if(editText1.isFocused()){
                     editText1.setFocusable(true);
                     text = editText1.getText().toString();
-                    if(!text.isEmpty())
-                        text=text.substring(0,text.length()-1);
-                    if(text.isEmpty())
+                    if(text.length()==1)
                         text = "0";
+                    else
+                        text=text.substring(0,text.length()-1);
                     editText1.setText(text);
                     Integer temp = Integer.valueOf(text,2);
                     editText2.setText(Integer.toOctalString(temp));
@@ -225,7 +225,7 @@ public class ActivityOne extends AppCompatActivity {
                 else if(editText2.isFocused()){
                     editText2.setFocusable(true);
                     text = editText2.getText().toString();
-                    if(text.isEmpty())
+                    if(text.length()==1)
                         text = "0";
                     else
                         text=text.substring(0,text.length()-1);
@@ -237,7 +237,7 @@ public class ActivityOne extends AppCompatActivity {
                 } else if(editText3.isFocused()){
                     editText3.setFocusable(true);
                     text = editText3.getText().toString();
-                    if(text.isEmpty())
+                    if(text.length()==1)
                         text = "0";
                     else
                         text=text.substring(0,text.length()-1);
@@ -249,8 +249,7 @@ public class ActivityOne extends AppCompatActivity {
                 } else if(editText4.isFocused()){
                     editText4.setFocusable(true);
                     text = editText4.getText().toString();
-                 //   editText4.setSelection(text.length());
-                    if(text.isEmpty())
+                    if(text.length()==1)
                         text = "0";
                     else
                         text=text.substring(0,text.length()-1);

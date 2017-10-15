@@ -159,10 +159,10 @@ public class ActivityFive extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 text = editText.getText().toString();
-                if(!text.equals(""))
-                    text=text.substring(0,text.length()-1);
-                if(text.equals(""));
+                if(text.length()==1)
                     text = "0";
+                else
+                    text=text.substring(0,text.length()-1);
                 editText.setText(text);
             }
         });
@@ -181,12 +181,7 @@ public class ActivityFive extends AppCompatActivity {
                 textView9.setText("0");
             }
         });
-
-
-
     }
-
-
 
     private void buttonAction(Button bt,final String str){
         bt.setOnClickListener(new View.OnClickListener() {
@@ -205,5 +200,4 @@ public class ActivityFive extends AppCompatActivity {
             }
         });
     }
-
 }

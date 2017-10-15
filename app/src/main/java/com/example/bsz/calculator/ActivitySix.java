@@ -14,7 +14,6 @@ public class ActivitySix extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.main_menu,menu);
-
         return true;
     }
 
@@ -47,7 +46,7 @@ public class ActivitySix extends AppCompatActivity {
                 intent.setClass(this,ActivityFive.class);
                 startActivity(intent);
                 break;
-       /*     case R.id.option7:
+       /*   case R.id.option7:
                 intent.setClass(this,ActivitySix.class);
                 startActivity(intent);
                 break;*/

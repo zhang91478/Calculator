@@ -6,32 +6,25 @@
     android:orientation="vertical"
     android:background="@color/background_all">
 
-    <TextView
+    <EditText
         android:id="@+id/textView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="最上面的缓存框"
-        android:textColor="#b9b8b8"
-        android:layout_weight="1"
-        android:gravity="end|right"/>
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:gravity="end|right"
-        android:text="结果框"
+        android:lines="2"
+        android:text="0"
         android:textColor="@color/text"
         android:layout_weight="1"
         />
 
-    <TextView
+    <EditText
         android:layout_weight="1"
-        android:id="@+id/textView3"
+        android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:lines="2"
         android:gravity="end|right"
-        android:text="输入框"
+        android:text="0"
         android:textColor="@color/text"
         android:maxLines="1"
         />
